@@ -1,24 +1,35 @@
-function AwesomeMeetup<T extends { new(...args: any[]): {} }>(constructor: T) {
-    return class extends constructor implements extra {
-        speaker: string = "Ragularuban";
-        extra = "Tadah!";
+function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): TFunc | void {
+    return class extends constructor implements SmartDog {
+        say(): string {
+            return "Hi, I'm Snaffles";
+        }
+        thinking(): void {
+            console.log("Where's my bone?");
+        }
     }
 }
 
-@AwesomeMeetup
-class JSMeetup {
-    public speaker = "Ruban";
+@Helmet
+class Snaffles {
+    private name: string = "Snaffles";
     constructor() {
     }
-    greet() {
-        return "Hi, I'm " + this.speaker;
+    say() {
+        return "Gaf!";
     }
 }
 
-interface extra {
-    extra: string;
+interface SmartDog {
+    say(): string;
+    thinking(): void;
 }
 
-const meetup = new JSMeetup() as JSMeetup & extra;
-console.log(meetup.greet());
-console.log(meetup.extra);
+const snaffles = new Snaffles() as Snaffles & SmartDog;
+console.log(snaffles.say());
+if(snaffles.thinking) { 
+    snaffles.thinking(); 
+}
+
+
+
+//             // return "Hi, I'm " + (<any>this).name;

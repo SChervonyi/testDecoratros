@@ -1,4 +1,4 @@
-function realName(target: any, key: string): void {
+function RealName(target: any, key: string): void {
     // property value
     var _val : any = target[key];
 
@@ -20,8 +20,7 @@ function realName(target: any, key: string): void {
 }
 
 class JSMeetup {
-    //@realName
-    public myName = "Ruban";
+    @RealName public myName = "Ruban";
     constructor() {
     }
     greet() {

@@ -1,5 +1,5 @@
-function LeDecorator(target: Object, propertyKey: string, descriptor: PropertyDescriptor): any {
-    var oldValue = descriptor.value;
+function LeDecorator(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor <any> {
+    let oldValue = descriptor.value;
 
     descriptor.value = function () {
         console.log(`Calling "${propertyKey}" with`, arguments, target);

@@ -1,4 +1,4 @@
-function logParameter(target: any, key: string, index: number) {
+function LogParameter(target: any, key: string, index: number) {
     var metadataKey = `myMetaData`;
     if (Array.isArray(target[metadataKey])) {
         target[metadataKey].push(index);
@@ -8,7 +8,7 @@ function logParameter(target: any, key: string, index: number) {
     }
 }
 
-function logMethod(target: any, key: string, descriptor: any): any {
+function LogMethod(target: any, key: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> {
     var originalMethod = descriptor.value;
     descriptor.value = function (...args: any[]) {
 
@@ -30,8 +30,8 @@ function logMethod(target: any, key: string, descriptor: any): any {
 }
 
 class JSMeetup {
-    //@logMethod
-    public saySomething(something: string, @logParameter somethingElse: string): string {
+    @LogMethod
+    public saySomething(something: string, @LogParameter somethingElse: string): string {
         return something + " : " + somethingElse;
     }
 }
