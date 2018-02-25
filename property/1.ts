@@ -26,7 +26,7 @@ class Rick {
     }
 }
 
-const meetup = new Rick();
-console.log(meetup.greet());
-meetup.myName = "Morti";
-console.log(meetup.greet());
+const rick = new Rick();
+console.log(rick.greet());
+rick.myName = "Morti";
+console.log(rick.greet());
