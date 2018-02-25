@@ -4,7 +4,7 @@ function RealName(target: any, key: string): void {
 
     // property getter
     var getter = function () {
-        return "Ragularuban(" + _val + ")";
+        return "Sanchez(" + _val + ")";
     };
 
     // property setter
@@ -20,7 +20,7 @@ function RealName(target: any, key: string): void {
 }
 
 class JSMeetup {
-    @RealName public myName = "Ruban";
+    @RealName public myName = "Rick";
     constructor() {
     }
     greet() {
@@ -30,5 +30,5 @@ class JSMeetup {
 
 const meetup = new JSMeetup();
 console.log(meetup.greet());
-meetup.myName = "Ragul";
+meetup.myName = "Morti";
 console.log(meetup.greet());
