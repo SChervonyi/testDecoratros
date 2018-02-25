@@ -14,7 +14,7 @@ function LeDecorator(target: Object, propertyKey: string, descriptor: TypedPrope
 
 class JSMeetup {
     speaker = "Ruban";
-    @LeDecorator
+     @LeDecorator
     welcome(arg1: string, arg2: string): string {
         console.log(`Arguments Received are ${arg1}, ${arg2}`);
         return `${arg1} ${arg2}`;

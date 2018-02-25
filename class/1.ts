@@ -1,4 +1,4 @@
-function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): TFunc | void {
+function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): TFunc {
     return class extends constructor implements SmartDog {
         say(): string {
             return "Hi, I'm Snaffles";
@@ -12,15 +12,12 @@ function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): 
 @Helmet
 class Snaffles {
     private name: string = "Snaffles";
-    constructor() {
-    }
     say() {
         return "Gaf!";
     }
 }
 
 interface SmartDog {
-    say(): string;
     thinking(): void;
 }
 
