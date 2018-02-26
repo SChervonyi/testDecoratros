@@ -1,26 +1,30 @@
-function LeDecorator(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor <any> {
+function Discount(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor <any> {
     let oldValue = descriptor.value;
 
     descriptor.value = function () {
         console.log(`Calling "${propertyKey}" with`, arguments, target);
-        // Executing the original function interchanging the arguments
-        let value = oldValue.apply(null, [arguments[1], arguments[0]]);
+        // Executing the original function
+        let value = oldValue.apply(this, ...arguments);
         //returning a modified value
-        return value + "; This is awesome";
+        if (value >= 100){
+            return value * 0.9;
+        }
+        return value;
     };
 
     return descriptor;
 }
 
 class JSMeetup {
-    speaker = "Ruban";
-     @LeDecorator
-    welcome(arg1: string, arg2: string): string {
-        console.log(`Arguments Received are ${arg1}, ${arg2}`);
-        return `${arg1} ${arg2}`;
+    private readonly deliveryPrice: number = 10;
+    @Discount
+    calculateSum(arr: number[]): number {
+        return arr.reduce((a, b) => a + b, this.deliveryPrice);
     }
 }
 
 const meetup = new JSMeetup();
 
-console.log(meetup.welcome("World", "Hello"));
+console.log(meetup.calculateSum([10, 20]));
+console.log('---------------------------');
+console.log(meetup.calculateSum([50, 50]));

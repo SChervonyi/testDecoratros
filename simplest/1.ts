@@ -8,11 +8,14 @@
 // 	constructor() {
 // 		console.log('constructor!');
 //     }
-    
 //     name: string = 'Some String';
 // }
 
 // class ExampleClass {
+//     constructor() {
+//         console.log('constructor!');
+//     }
+
 // 	@Console
 // 	greet(){
 // 		console.log("greet");
@@ -20,12 +23,20 @@
 // }
 
 // class ExampleClass {
+//     constructor() {
+//         console.log('constructor!');
+//     }
+
 // 	greet(@Console name: string){
 // 		console.log("greet");
 // 	}
 // }
 
 // class ExampleClass {
+//     constructor() {
+//         console.log('constructor!');
+//     }
+
 // 	@Console name = "Rick";
 // }
 
