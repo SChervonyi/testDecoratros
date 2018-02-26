@@ -1,12 +1,15 @@
-// function Console() {
-// 	console.log("Hi from decorator!");
+// function Console(target) {
+//     console.log('Hi from decorator');
+// 	console.log(target);
 // }
 
 // @Console
 // class ExampleClass {
 // 	constructor() {
 // 		console.log('constructor!');
-// 	}
+//     }
+    
+//     name: string = 'Some String';
 // }
 
 // class ExampleClass {

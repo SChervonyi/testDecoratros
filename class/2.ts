@@ -12,19 +12,18 @@ function HelmetFactory(name: string) {
 }
 
 @HelmetFactory("Snaffles")
-class Snaffles {
+class Dog {
     say() {
         return "Gaf!";
     }
 }
 
 interface SmartDog {
-    say(): string;
     thinking(): void;
 }
 
-const snaffles = new Snaffles() as Snaffles & SmartDog;
-console.log(snaffles.say());
-if(snaffles.thinking) { 
-    snaffles.thinking(); 
+const dog = new Dog() as Dog & SmartDog;
+console.log(dog.say());
+if (dog.thinking) { 
+    dog.thinking(); 
 }
