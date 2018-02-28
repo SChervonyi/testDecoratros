@@ -14,6 +14,8 @@ function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): 
 
 @Helmet
 class Snaffles {
+    public name: string = "Snaffles";
+    
     say() {
         return "Gaf!";
     }
