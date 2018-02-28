@@ -24,6 +24,7 @@ interface SmartDog {
 }
 
 const snaffles = new Snaffles() as Snaffles & SmartDog;
+
 console.log(snaffles.say());
 if(snaffles.thinking) { 
     snaffles.thinking(); 
