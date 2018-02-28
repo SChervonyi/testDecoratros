@@ -1,4 +1,9 @@
 function Discount(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor <any> {
+    console.log("Target: ", target);
+    console.log("PropertyKey: ", propertyKey);
+    console.log("descriptor: ", descriptor);
+    console.log('************************************************************');
+
     let oldValue = descriptor.value;
 
     descriptor.value = function () {
@@ -25,6 +30,6 @@ class JSMeetup {
 
 const meetup = new JSMeetup();
 
-console.log(meetup.calculateSum([10, 20]));
-console.log('---------------------------');
-console.log(meetup.calculateSum([50, 50]));
+console.log("Result:", meetup.calculateSum([10, 20]));
+console.log('-------------------------------------------------------');
+console.log("Result:", meetup.calculateSum([50, 50]));

@@ -1,4 +1,8 @@
 function RealName(target: any, key: string): void {
+    console.log("Target: ", target);
+    console.log("PropertyKey: ", key);
+    console.log('************************************************************');
+
     // property value
     var _val : any = target[key];
 

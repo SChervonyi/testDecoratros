@@ -1,4 +1,7 @@
 function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): TFunc {
+    console.log("Target: ", constructor);
+    console.log('************************************************************');
+    
     return class extends constructor implements SmartDog {
         say(): string {
             return "Hi, I'm Snaffles";
