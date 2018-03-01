@@ -1,6 +1,6 @@
 function HelmetFactory(name: string) {
     return function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): TFunc | void {
-        return class extends constructor implements SmartDog {
+        return class extends constructor implements SmartAnimal {
             say(): string {
                 return "Hi, I'm " + name;
             }
@@ -18,11 +18,11 @@ class Dog {
     }
 }
 
-interface SmartDog {
+interface SmartAnimal {
     thinking(): void;
 }
 
-const dog = new Dog() as Dog & SmartDog;
+const dog = new Dog() as Dog & SmartAnimal;
 console.log(dog.say());
 if (dog.thinking) { 
     dog.thinking(); 

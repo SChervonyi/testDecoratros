@@ -2,12 +2,12 @@ function Helmet<TFunc extends { new(...args: any[]): {} }>(constructor: TFunc): 
     console.log("Target: ", constructor);
     console.log('************************************************************');
     
-    return class extends constructor implements SmartDog {
+    return class extends constructor implements SmartAnimal {
         say(): string {
             return "Hi, I'm Snaffles";
         }
         thinking(): void {
-            console.log("Where's my bone?");
+            console.log("I am thinking");
         }
     }
 }
@@ -21,11 +21,11 @@ class Snaffles {
     }
 }
 
-interface SmartDog {
+interface SmartAnimal {
     thinking(): void;
 }
 
-const snaffles = new Snaffles() as Snaffles & SmartDog;
+const snaffles = new Snaffles() as Snaffles & SmartAnimal;
 
 console.log(snaffles.say());
 if(snaffles.thinking) { 
