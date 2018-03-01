@@ -1,9 +1,4 @@
 function Discount(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor <any> {
-    console.log("Target: ", target);
-    console.log("PropertyKey: ", propertyKey);
-    console.log("descriptor: ", descriptor);
-    console.log('************************************************************');
-
     let oldValue = descriptor.value;
 
     descriptor.value = function () {
