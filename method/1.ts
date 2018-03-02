@@ -2,7 +2,6 @@ function Discount(target: Object, propertyKey: string, descriptor: TypedProperty
     let oldValue = descriptor.value;
 
     descriptor.value = function () {
-        console.log(`Calling "${propertyKey}" with`, arguments, target);
         // Executing the original function
         let value = oldValue.apply(this, ...arguments);
         //returning a modified value

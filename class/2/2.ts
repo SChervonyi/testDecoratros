@@ -5,14 +5,14 @@ function HelmetFactory(name: string) {
                 return "Hi, I'm " + name;
             }
             thinking(): void {
-                console.log("Where's my bone?");
+                console.log("I am thinking");
             }
         }
     }
 }
 
 @HelmetFactory("Snaffles")
-class Dog {
+class Snaffles {
     say() {
         return "Gaf!";
     }
@@ -22,7 +22,7 @@ interface SmartAnimal {
     thinking(): void;
 }
 
-const dog = new Dog() as Dog & SmartAnimal;
+const dog = new Snaffles() as Snaffles & SmartAnimal;
 console.log(dog.say());
 if (dog.thinking) { 
     dog.thinking(); 
